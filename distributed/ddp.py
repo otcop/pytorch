@@ -55,6 +55,7 @@ def demo_checkpoint(rank, world_size):
 
     CHECKPOINT_PATH = tempfile.gettempdir() + "/model.checkpoint"
     if rank == 0:
+        print("load model")
         torch.save(ddp_model.state_dict(), CHECKPOINT_PATH)
     
     dist.barrier()
