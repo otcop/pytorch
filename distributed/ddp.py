@@ -76,4 +76,4 @@ def demo_checkpoint(rank, world_size):
         os.remove(CHECKPOINT_PATH)
     cleanup()
 if __name__ =="__main__":
-    run_demo(demo_basic, 2)
+    run_demo(demo_checkpoint, 2)
