@@ -53,7 +53,7 @@ def demo_checkpoint(rank, world_size):
     model = ToyModel().to(rank)
     ddp_model = DDP(model, device_ids=[rank])
 
-    CHECKPOINT_PATH = tempfile.gettempdir() + "/model.checkpoint"
+    CHECKPOINT_PATH =  "./model.checkpoint"
     if rank == 0:
         print("load model")
         torch.save(ddp_model.state_dict(), CHECKPOINT_PATH)
